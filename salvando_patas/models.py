@@ -36,7 +36,7 @@ class HelpOption(models.Model):
 #Modelo para recursos
 class Resource(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(blank=True,null=True)
     link = models.URLField(blank=True,null=True)
     file = models.FileField(upload_to='resources/',blank=True,null=True)
 
