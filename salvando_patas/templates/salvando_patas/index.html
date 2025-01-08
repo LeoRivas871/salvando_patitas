@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Salvando patitas</title>
+    <style>
+        .banner {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
+{% extends 'salvando_patas/base.html' %}
+{% block content %}
+    <img src="{{ MEDIA_URL }} media/banner/1.jpeg" alt="Banner" class="banner">
     <p>Salvando patitas!</p>
+{% endblock content %}
 </body>
 </html>
