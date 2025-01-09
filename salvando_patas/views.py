@@ -34,3 +34,8 @@ def recursos(request):
     objetos = Resource.objects.all()
     context = {'objetos':objetos}
     return render(request,'salvando_patas/recursos.html',context)
+
+def donacion(request):
+    objetos = Donation.objects.all()
+    context = {'objetos':objetos}
+    return render(request,'salvando_patas/donacion.html',context)

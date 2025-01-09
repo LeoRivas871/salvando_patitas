@@ -13,6 +13,7 @@ urlpatterns = [
     path('problematica/',views.problematica,name='problematica'),
     path('como_ayudar/',views.como_ayudar,name='como_ayudar'),
     path('recursos/',views.recursos,name='recursos'),
+    path('donacion/',views.donacion,name='donacion'),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Salvando patitas</title>
+</head>
+<body>
+{% extends 'salvando_patas/base.html' %}
+{% block content %}
+    <ul>
+    {% for objeto in objetos %}
+        <li>{{ objeto.donor_name }}</li>
+        <li>{{ objeto.amount }}</li>
+        <li>{{ objeto.date }}</li>
+        <li>{{ objeto.messagge }}</li>
+    {% endfor %}
+    </ul>
+{% endblock content %}
+</body>
+</html>
