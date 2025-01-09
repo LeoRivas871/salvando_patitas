@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Salvando patitas</title>
+</head>
+<body>
+{% extends 'salvando_patas/base.html' %}
+{% block content %}
+    <ul>
+    {% for objeto in objetos %}
+        <li>{{ objeto.name }}</li>
+        <li>{{ objeto.mission }}</li>
+        <li>{{ objeto.vision }}</li>
+        <li>{{ objeto.contact_email }}</li>
+        <li>{{ objeto.contact_phone }}</li>
+        {% if objeto.logo %}
+            <li><img src="{{ objeto.logo.url }}" alt="{{ objeto.name }} Logo" width="100"></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endblock content %}
+</body>
+</html>
