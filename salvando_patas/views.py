@@ -24,3 +24,8 @@ def problematica(request):
     objetos = Issue.objects.all()
     context = {'objetos':objetos}
     return render(request,'salvando_patas/problematica.html',context)
+
+def como_ayudar(request):
+    objetos = HelpOption.objects.all()
+    context = {'objetos':objetos}
+    return render(request,'salvando_patas/como_ayudar.html',context)

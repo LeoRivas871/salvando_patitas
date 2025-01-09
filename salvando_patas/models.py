@@ -32,7 +32,7 @@ class Issue(models.Model):
 #Modelo para como ayudar
 class HelpOption(models.Model):
     title = models.CharField(max_length=200)
-    description = models.ImageField(upload_to='help/', blank=True,null=True)
+    description = models.TextField()
 
 #Modelo para recursos
 class Resource(models.Model):

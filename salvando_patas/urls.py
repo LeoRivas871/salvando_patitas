@@ -11,6 +11,7 @@ urlpatterns = [
     path('team/',views.miembros,name='miembros'),
     path('actividades/',views.actividades,name='actividades'),
     path('problematica/',views.problematica,name='problematica'),
+    path('como_ayudar/',views.como_ayudar,name='como_ayudar'),
 ]
 
 if settings.DEBUG:
