@@ -12,6 +12,7 @@ urlpatterns = [
     path('actividades/',views.actividades,name='actividades'),
     path('problematica/',views.problematica,name='problematica'),
     path('como_ayudar/',views.como_ayudar,name='como_ayudar'),
+    path('recursos/',views.recursos,name='recursos'),
 ]
 
 if settings.DEBUG:

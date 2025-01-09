@@ -29,3 +29,8 @@ def como_ayudar(request):
     objetos = HelpOption.objects.all()
     context = {'objetos':objetos}
     return render(request,'salvando_patas/como_ayudar.html',context)
+
+def recursos(request):
+    objetos = Resource.objects.all()
+    context = {'objetos':objetos}
+    return render(request,'salvando_patas/recursos.html',context)
