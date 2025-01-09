@@ -10,6 +10,7 @@ urlpatterns = [
     path('organizacion/',views.organization,name='organizacion'),
     path('team/',views.miembros,name='miembros'),
     path('actividades/',views.actividades,name='actividades'),
+    path('problematica/',views.problematica,name='problematica'),
 ]
 
 if settings.DEBUG:

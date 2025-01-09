@@ -19,3 +19,8 @@ def actividades(request):
     objetos = Activity.objects.all()
     context = {'objetos':objetos}
     return render(request,'salvando_patas/actividades.html',context)
+
+def problematica(request):
+    objetos = Issue.objects.all()
+    context = {'objetos':objetos}
+    return render(request,'salvando_patas/problematica.html',context)

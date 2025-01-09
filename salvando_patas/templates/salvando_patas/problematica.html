@@ -12,10 +12,8 @@
         <li>{{ objeto.title }}</li>
         <li>{{ objeto.description }}</li>
         {% if objeto.image %}
-            <li><img src="{{ objeto.image.url }}" alt="{{ objeto.name }} Logo" width="100"></li>
-        </li>
+        <img src="{{ objeto.image.url }}" alt="{{ objeto.name }} photo" width="100">
         {% endif %}
-        <li>{{ objeto.date }}</li>
     {% endfor %}
     </ul>
 {% endblock content %}
