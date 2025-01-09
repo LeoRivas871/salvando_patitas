@@ -9,3 +9,8 @@ def organization(request):
     objetos = Organization.objects.all()
     context = {'objetos':objetos}
     return render(request,'salvando_patas/organizacion.html',context)
+
+def miembros(request):
+    objetos = TeamMember.objects.all()
+    context = {'objetos':objetos}
+    return render(request,'salvando_patas/team.html',context)

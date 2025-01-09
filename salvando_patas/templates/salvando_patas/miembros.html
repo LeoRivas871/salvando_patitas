@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Salvando patitas</title>
+</head>
+<body>
+{% extends 'salvando_patas/base.html' %}
+{% block content %}
+    <ul>
+    {% for objeto in objetos %}
+        <li>{{ objeto.name }}</li>
+        <li>{{ objeto.role }}</li>
+        <li>{{ objeto.bio }}</li>
+        {% if objeto.photo %}
+            <li><img src="{{ objeto.photo.url }}" alt="{{ objeto.name }} photo" width="100"></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endblock content %}
+</body>
+</html>

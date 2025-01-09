@@ -8,6 +8,7 @@ app_name = 'salvando_patas'
 urlpatterns = [
     path('',views.index,name='index'),
     path('organizacion/',views.organization,name='organizacion'),
+    path('team/',views.miembros,name='team'),
 ]
 
 if settings.DEBUG:
