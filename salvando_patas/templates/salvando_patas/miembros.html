@@ -3,20 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Salvando patitas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .team-header {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .team-member {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .team-photo {
+            max-width: 150px;
+            margin-top: 10px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
 {% extends 'salvando_patas/base.html' %}
 {% block content %}
-    <ul>
-    {% for objeto in objetos %}
-        <li>{{ objeto.name }}</li>
-        <li>{{ objeto.role }}</li>
-        <li>{{ objeto.bio }}</li>
-        {% if objeto.photo %}
-            <li><img src="{{ objeto.photo.url }}" alt="{{ objeto.name }} photo" width="100"></li>
-        {% endif %}
-    {% endfor %}
-    </ul>
+    <div class="container">
+        <h1 class="team-header">Nuestro Equipo</h1>
+        <div class="row justify-content-center">
+            {% for objeto in objetos %}
+                <div class="col-md-6 team-member">
+                    <h2>{{ objeto.name }}</h2>
+                    <p><strong>Rol:</strong> {{ objeto.role }}</p>
+                    <p>{{ objeto.bio }}</p>
+                    {% if objeto.photo %}
+                        <img class="team-photo" src="{{ objeto.photo.url }}" alt="{{ objeto.name }} photo">
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

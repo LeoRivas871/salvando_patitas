@@ -3,16 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Salvando patitas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .resources-header {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .resource-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .resource-link, .resource-file {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 {% extends 'salvando_patas/base.html' %}
 {% block content %}
-    <ul>
-    {% for objeto in objetos %}
-        <li>{{ objeto.title }}</li>
-        <li>{{ objeto.description }}</li>
-    {% endfor %}
-    </ul>
+    <div class="container">
+        <h1 class="resources-header">Nuestros Recursos</h1>
+        <div class="row justify-content-center">
+            {% for objeto in objetos %}
+                <div class="col-md-6 resource-item">
+                    <h2>{{ objeto.title }}</h2>
+                    <p>{{ objeto.description }}</p>
+                    {% if objeto.link %}
+                        <a class="resource-link btn btn-link" href="{{ objeto.link }}" target="_blank">{{ objeto.link }}</a>
+                    {% endif %}
+                    {% if objeto.file %}
+                        <a class="resource-file btn btn-primary" href="{{ objeto.file.url }}">Descargar archivo</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

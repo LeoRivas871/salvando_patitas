@@ -3,18 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Salvando patitas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .donations-header {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .donation-item {
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .donation-item p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
 {% extends 'salvando_patas/base.html' %}
 {% block content %}
-    <ul>
-    {% for objeto in objetos %}
-        <li>{{ objeto.donor_name }}</li>
-        <li>{{ objeto.amount }}</li>
-        <li>{{ objeto.date }}</li>
-        <li>{{ objeto.messagge }}</li>
-    {% endfor %}
-    </ul>
+    <div class="container">
+        <h1 class="donations-header">Donaciones Recibidas</h1>
+        <div class="row justify-content-center">
+            {% for objeto in objetos %}
+                <div class="col-md-6 donation-item">
+                    <p><strong>Donante:</strong> {{ objeto.donor_name }}</p>
+                    <p><strong>Cantidad:</strong> {{ objeto.amount }}</p>
+                    <p><strong>Fecha:</strong> {{ objeto.date }}</p>
+                    <p><strong>Mensaje:</strong> {{ objeto.messagge }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

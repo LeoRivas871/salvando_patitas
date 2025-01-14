@@ -3,19 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Salvando patitas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .activities-header {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .activity-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .activity-image {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        .activity-container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 {% extends 'salvando_patas/base.html' %}
 {% block content %}
-    <ul>
-    {% for objeto in objetos %}
-        <li>{{ objeto.title }}</li>
-        <li>{{ objeto.description }}</li>
-        {% if objeto.image %}
-        <img src="{{ objeto.image.url }}" alt="{{ objeto.name }} photo" width="100">
-        {% endif %}
-    {% endfor %}
-    </ul>
+    <div class="container activity-container">
+        <h1 class="activities-header">Nuestras Actividades</h1>
+        <div class="row justify-content-center">
+            {% for objeto in objetos %}
+                <div class="col-md-6 activity-item">
+                    <h2>{{ objeto.title }}</h2>
+                    <p>{{ objeto.description }}</p>
+                    {% if objeto.image %}
+                        <img class="activity-image" src="{{ objeto.image.url }}" alt="{{ objeto.name }} photo">
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
