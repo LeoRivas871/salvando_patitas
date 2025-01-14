@@ -2,19 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescate de Perros</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand img {
+            max-height: 50px; /* Ajusta la altura del logo */
+        }
+        .donar-link {
+            background-color: #007bff; /* Azul de Bootstrap */
+            color: white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-weight: bold;
+            display: block; /* Asegura que abarque todo el ancho */
+            height: 100%; /* Asegura que abarque todo el alto */
+        }
+        .nav-link {
+            font-size: 1.1em; /* Tamaño de fuente */
+            color: #333; /* Color del texto */
+        }
+        .nav-link:hover {
+            color: #0056b3; /* Color del texto al pasar el ratón */
+        }
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+            display: flex;
+            align-items: center; /* Centra verticalmente el contenido */
+        }
+        .navbar {
+            border-bottom: 1px solid #ddd; /* Borde inferior del navbar */
+        }
+    </style>
 </head>
 <body>
-<p>
-    <a href="{% url 'salvando_patas:index' %}">Inicio</a> -
-    <a href="{% url 'salvando_patas:organizacion' %}">Salvando Patitas</a> -
-    <a href="{% url 'salvando_patas:miembros' %}">Miembros</a> -
-    <a href="{% url 'salvando_patas:actividades' %}">Actividades</a> -
-    <a href="{% url 'salvando_patas:problematica' %}">Problematica</a> -
-    <a href="{% url 'salvando_patas:como_ayudar' %}">¿Cómo ayudar?</a> -
-    <a href="{% url 'salvando_patas:recursos' %}">Recursos</a> -
-    <a href="{% url 'salvando_patas:donacion' %}">Donar</a> -
-</p>
-{% block content %}{% endblock content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'salvando_patas:index' %}">
+    Rescate de Perros
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'salvando_patas:organizacion' %}">Quiénes somos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'salvando_patas:miembros' %}">Qué hacemos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'salvando_patas:actividades' %}">Problemática</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'salvando_patas:problematica' %}">¿Cómo puedes ayudar?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'salvando_patas:como_ayudar' %}">Recursos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link donar-link" href="{% url 'salvando_patas:donacion' %}">DONA</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container mt-4">
+    {% block content %}{% endblock content %}
+</div>
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

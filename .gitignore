@@ -1,3 +1,4 @@
 pat_env
-__pycache__
-.idea
+__pycache__/
+.idea/
+.idea/vcs.xml
